@@ -108,3 +108,9 @@ SQL analysis and the four-page Power BI dashboard have been developed. Repositor
 ### Page 4 — Business Insights & Recommendations
 ![Business Insights and Recommendations](docs/screenshots/04-business-insights-recommendations.png)
 
+## Download the Power BI Dashboard
+
+[Download Olist_Ecommerce_Operations_Dashboard.pbix](https://github.com/vineethbathula343/olist-ecommerce-operations-analytics/releases/download/v1.0.0/Olist_Ecommerce_Operations_Dashboard.pbix)
+
+Open the file using Power BI Desktop. Refreshing the report may require configuring the SQL Server connection for your environment.
+
