@@ -91,3 +91,20 @@ Dashboard screenshots and the final project files will be added to this reposito
 ## Project Status
 
 SQL analysis and the four-page Power BI dashboard have been developed. Repository organisation, dashboard evidence, and supporting documentation are being prepared for portfolio presentation.
+
+
+
+## Dashboard Preview
+
+### Page 1 — Executive Overview
+![Executive Overview](docs/screenshots/01-executive-overview.png)
+
+### Page 2 — Operations & Seller Performance
+![Operations and Seller Performance](docs/screenshots/02-operations-seller-performance.png)
+
+### Page 3 — Customer & Category Insights
+![Customer and Category Insights](docs/screenshots/03-customer-category-insights.png)
+
+### Page 4 — Business Insights & Recommendations
+![Business Insights and Recommendations](docs/screenshots/04-business-insights-recommendations.png)
+
