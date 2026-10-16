@@ -77,7 +77,7 @@ The following figures reflect the current project analysis and its documented KP
 3. **Customer & Category Insights** — customer KPIs, category order value, category delivery risk, and the category risk scatter plot.
 4. **Business Insights & Recommendations** — evidence cards, the priority action plan, and a monitoring scorecard.
 
-Dashboard screenshots and the final project files will be added to this repository as the portfolio packaging is completed.
+The four dashboard screenshots are embedded below, and the downloadable Power BI report is available in the v1.0.0 release. will be added to this repository as the portfolio packaging is completed.
 
 ## Data Quality and Limitations
 
