@@ -90,7 +90,7 @@ The four dashboard screenshots are embedded below, and the downloadable Power BI
 
 ## Project Status
 
-SQL analysis and the four-page Power BI dashboard have been developed. Repository organisation, dashboard evidence, and supporting documentation are being prepared for portfolio presentation.
+The four dashboard screenshots are embedded below, the SQL analysis scripts are organised in the `sql/` folder, the cleaning decision log is available under `docs/`, and the downloadable Power BI report is published in the `v1.0.0` release.
 
 
 
