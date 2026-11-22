@@ -43,6 +43,20 @@ The source data is not included in this repository at this stage. Refer to the o
 4. **Power BI reporting:** Developed a four-page report covering executive performance, operations and seller risk, customer and category insights, and business recommendations.
 5. **Decision support:** Translated descriptive findings into prioritized actions and suggested monitoring metrics.
 
+## Reproduce the SQL analysis
+
+1. Download the source data from Kaggle and apply the preparation decisions in the [Excel cleaning log](docs/Cleaning_Decision_Log_Complete.xlsx). The raw Kaggle CSVs need preparation before they match the cleaned SQL schema.
+2. In a fresh SQL Server database named `olist_analysis`, import the prepared tables into the `dbo` schema. [The validation script](sql/01_data_validation.sql) lists all nine expected table names. Use date/time types for order timestamps and numeric types for prices, freight, payment values and review scores. The project SQL expects derived fields such as `delivery_status`, `delivery_delay_days`, and `item_total_value`, and expects the category translation columns to be named `column1` and `column2`. See the [item aggregation](sql/02_order_item_aggregation.sql), [delivery analysis](sql/07_delivery_performance.sql), and [category analysis](sql/11_category_performance.sql) for how these fields are consumed.
+3. Install SQL Server's `sqlcmd` command-line utility. From the repository root, run the following with Windows authentication, replacing `localhost` with your SQL Server instance if needed:
+
+   ```powershell
+   sqlcmd -S localhost -E -b -i sql/run_analysis.sql
+   ```
+
+   The runner executes scripts 01–13 in order, checks that the master table contains one non-null, unique order ID per source row, and commits the analytical build after all steps succeed. It stops if `dbo.orders_master` already exists. Use a fresh project database for a full rebuild.
+
+4. Open the [Power BI release](https://github.com/vineethbathula343/olist-ecommerce-operations-analytics/releases/tag/v1.0.0) in Power BI Desktop. For a local refresh, update the report's data-source settings to point to your SQL Server instance and `olist_analysis`.
+
 ## Key Findings
 
 The following figures reflect the current project analysis and its documented KPI definitions.
@@ -66,7 +80,7 @@ The following figures reflect the current project analysis and its documented KP
 ### Important interpretation
 
 - Late deliveries are associated with substantially lower review scores in this dataset.
-- Sellers classified as high risk have a late-delivery rate above the 8.11% project benchmark and an average review score below 4.09.
+- The high-risk KPI counts sellers with a late-delivery rate above 8.11% and an average review score below 4.09. The [seller detail query](sql/10_seller_performance.sql) also requires at least 100 delivered orders, so its result is a narrower shortlist.
 - The 78.7% low-review rate refers to orders delivered at least 15 days late; low reviews are defined as scores of 1 or 2.
 - The results are descriptive and do not establish that delivery delays alone caused lower review scores.
 
